@@ -30,45 +30,12 @@
 					</div>
 					<div class="form-group">
 						<button class="btn btn-primary">Create</button>
-						<a href=""class="btn btn-secondary">Cancel</a>
+						<a href="<?php echo base_url().'index.php/user/index';?>"class="btn btn-secondary">Cancel</a>
 					</div>
 				</div>
 			</form>
 		</div>
-	<div class="container" style="padding-top: 10px;">
-		<h4>Users view</h3>
-		<hr>
-		<div class="row">
-		<div class="col-md-6">
-			<table class="table table-striped">
-				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Edit</th>
-					<th>Delete</th>
-				</tr>
-				<?php if (!empty($users)) {
-					
-					foreach($users as $user){?>
-						<tr>
-							<td><?php echo $user['user_id']?></td>
-							<td><?php echo $user['name']?></td>
-							<td><?php echo $user['email']?></td>
-							<td>
-								<a href="<?php echo base_url().'index.php/user/edit'.$user['user_id']?>" class="btn btn-primary">Edit</a>
-							</td>
-							<td><a href="<?php echo base_url().'index.php/user/delete'.$user['user_id']?>" class="btn btn-danger">Delete</a>
-							</td>
-						</tr>
-							<?php }} else{ ?>
-								<tr>
-									<td colspan="5">Record not found</td>
-								</tr>
-							<?php } ?>
-				
-			</table>
-	</div>
+	
 </div>
 </body>
 </html>

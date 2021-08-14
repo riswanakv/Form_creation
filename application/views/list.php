@@ -29,6 +29,27 @@
 		
 		
 		<div class="row">
+			<div class="col-md-12">
+				<?php
+				$success=$this->session->userdata('success');
+					if ($success!="") {
+					?>
+					<div class="alert alert-success"><?php echo$success;?></div>
+					<?php
+					}
+					?>
+
+				<?php
+				$failure=$this->session->userdata('failure');
+				if ($failure!="") {
+					?>
+					<div class="alert alert-success"><?php echo $failure;?></div>
+						<?php
+						}
+						?>
+					</div>
+					
+			</div>
 		<div class="col-md-6">
 			<table class="table table-striped">
 				<tr>
@@ -48,7 +69,7 @@
 							<td>
 								<a href="<?php echo base_url().'index.php/user/edit/'.$user['user_id']?>" class="btn btn-primary">Edit</a>
 							</td>
-							<td><a href="<?php echo base_url().'index.php/user/delete'.$user['user_id']?>" class="btn btn-danger">Delete</a>
+							<td><a href="<?php echo base_url().'index.php/user/delete/'.$user['user_id']?>" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 							<?php }} else{ ?>
